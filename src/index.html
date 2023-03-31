@@ -1,305 +1,643 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Webpack Boilerplate Starter Template</title>
-    <meta name="description" content="Simple starter webpack 5 project template boilerplate supporting SASS/PostCSS, Babel ES7, browser syncing, code linting. Easy project setup having multiple features and developer friendly tools.">
-    <meta name="keywords" content="webpack, webpack-configuration, template, boilerplate, setup, html, css, sass, javascript">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Plamen Nikolov, WeAreAthlon">
-  </head>
-  <body>
-    <header>
-      <h1>Webpack 5 Template Boilerplate</h1>
-      <small>Maintained by <a href="https://www.weareathlon.com/" target="_blank" rel="noopener">WeAreAthlon</a>. Source code availalbe on <a href="https://github.com/WeAreAthlon/frontend-webpack-boilerplate/" target="_blank"><img src="images/content/github.png" alt="GitHub logo"> GitHub</a>.</small>
-      <div class="badges">
-        <a href="https://github.com/WeAreAthlon/frontend-webpack-boilerplate/" target="_blank" rel="noopener"><img src="https://img.shields.io/maintenance/yes/2023?logo=github" alt="Maintenance"></a>
-        <a href="https://webpack.js.org" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/webpack-v5.75.0-green?logo=webpack" alt="Current Webpack Version"></a>
-        <a href="https://app.travis-ci.com/github/WeAreAthlon/frontend-webpack-boilerplate" target="_blank" rel="noopener"><img src="https://app.travis-ci.com/WeAreAthlon/frontend-webpack-boilerplate.svg?branch=master" alt="Build Status"></a>
-        <a href="https://snyk.io/advisor/npm-package/@weareathlon/frontend-webpack-boilerplate" target="_blank" rel="noopener"><img src="https://snyk.io/advisor/npm-package/@weareathlon/frontend-webpack-boilerplate/badge.svg" alt="Snyk.io package health badge"></a>
-        <br>
-        <a href="https://github.com/WeAreAthlon/frontend-webpack-boilerplate/issues" target="_blank" rel="noopener"><img src="https://img.shields.io/github/issues-raw/WeAreAthlon/frontend-webpack-boilerplate" alt="GitHub Issues"></a>
-        <a href="https://snyk.io/test/github/WeAreAthlon/frontend-webpack-boilerplate?targetFile=package.json" target="_blank" rel="noopener"><img src="https://snyk.io/test/github/WeAreAthlon/frontend-webpack-boilerplate/badge.svg?targetFile=package.json" alt="Known Vulnerabilities"></a>
-        <a href="https://www.npmjs.com/package/@weareathlon/frontend-webpack-boilerplate" target="_blank" rel="noopener"><img src="https://img.shields.io/npm/dm/@weareathlon/frontend-webpack-boilerplate" alt="npm"></a>
-        <a href="https://github.com/WeAreAthlon/frontend-webpack-boilerplate/blob/master/LICENSE" target="_blank" rel="noopener"><img src="https://img.shields.io/github/license/WeAreAthlon/frontend-webpack-boilerplate" alt="GitHub License"></a>
-      </div>
-      <a href="https://github.com/WeAreAthlon/frontend-webpack-boilerplate" class="github-corner" title="View source on GitHub" aria-label="View source on GitHub">
-        <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
-          <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-          <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
-          <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
-        </svg>
-      </a>
-    </header>
-    <main>
-      <img src="images/content/header.png" alt="Webpack 5 Template Boilerplate">
-      <h1>Demo page illustrating building of SASS, PostCSS, JavaScript, Fonts, Background Images and Inline Images.</h1>
-      <img src="images/content/logoa.svg" alt="Logo of Athlon" class="logo"> 
-      <h2 id="table-of-contents">Table of Contents</h2>
-      <ul>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#requirements">Requirements</a></li>
-        <li>
-          <a href="#setup">Setup</a>
-          <ul>
-            <li><a href="#installation">Installation</a></li>
-            <li><a href="#define-package-metadata">Define Package Metadata</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#configuration">Configuration</a>
-          <ul>
-            <li><a href="#environment-configuration">Environment Configuration</a></li>
-            <li><a href="#additional-webpack-configuration">Additional webpack configuration</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#development">Development</a>
-          <ul>
-            <li><a href="#assets-source">Assets Source</a></li>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="icon" href="../images/content/favicon.png">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <section
+        class="nav mx-md-5 py-1 px-2 d-flex text-center flex-column flex-md-row align-items-md-center justify-content-between">
+        <div class="d-flex justify-content-between">
+            <a href="#" class="text-start text-decoration-none text-black">
+                <h2 class="fs-1">MIKALTO</h2>
+                <p class="ps-4">HOTELS & RESORTS</p>
+            </a>
+            <i class="menu-button d-flex align-items-center fas far fa-bars d-md-none"></i>
+        </div>
+        <ul class="menu-list d-none d-md-flex flex-column flex-md-row list-unstyled gap-3">
+            <li><a href="#" class="text-decoration-none anchor-blue">Home</a></li>
             <li>
-              <a href="#build-assets">Build Assets</a>
-              <ul>
-                <li><a href="#one-time-build-assets-for-development">One time build assets for development</a></li>
-                <li><a href="#build-assets-and-enable-source-files-watcher">Build assets and enable source files watcher</a></li>
-                <li><a href="#start-a-development-server---reloading-automatically-after-each-file-change">Start a development server - reloading automatically after each file change.</a></li>
-              </ul>
+                <a href="#" class="text-decoration-none anchor-blue">Our Rooms</a>
             </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#production">Production</a>
-          <ul>
-            <li><a href="#build-assets-1">Build Assets</a></li>
-            <li><a href="#get-built-assets">Get Built Assets</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#run-code-style-linters">Run Code Style Linters</a>
-          <ul>
-            <li><a href="#sass">SASS</a></li>
-            <li><a href="#javascript">JavaScript</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#additional-tools">Additional Tools</a>
-          <ul>
-            <li><a href="#run-assets-bundle-analyzer">Run Assets Bundle Analyzer</a></li>
-            <li><a href="#continuous-integration">Continuous Integration</a></li>
-          </ul>
-        </li>
-      </ul>
-      <h2 id="features">Features</h2>
-      <ul>
-        <li>
-          <strong>Simple setup</strong> instructions
-          <ul>
-            <li>Start development of a project right away with <strong>simple</strong>, <strong>configured</strong>, <strong>linter enabled</strong>, <strong>browser synced</strong> asset files.</li>
-          </ul>
-        </li>
-        <li>
-          Configuration per <strong>environment</strong>
-          <ul>
-            <li><code>development</code> - <a href="https://webpack.js.org/configuration/devtool/"><code>sourcemaps</code></a>, <a href="https://webpack.js.org/configuration/dev-server/"><code>browser synced developmentment server</code></a></li>
-            <li><code>production</code> - <a href="https://webpack.js.org/plugins/terser-webpack-plugin/"><code>minification</code></a>, <a href="https://webpack.js.org/configuration/devtool/"><code>sourcemaps</code></a></li>
-          </ul>
-        </li>
-        <li>Configurable <strong>browsers versions support</strong>. It uses <a href="https://github.com/browserslist/browserslist#full-list"><code>browserslist</code></a> - just specify the browsers you want to support in the <code>package.json</code> file for <code>browserslist</code>:</li>
-      </ul>
-      <pre><code class="lang-js"><span class="hljs-string">"browserslist"</span>: [
-          <span class="hljs-string">"last 2 versions"</span>,
-          <span class="hljs-string">"&gt; 5%"</span>
-      ]
-      </code></pre>
-      <ul>
-        <li>
-          The built CSS / JavaScript files will respect the <strong>configured supported browser versions</strong> using the following tools:
-          <ul>
-            <li><a href="https://github.com/postcss/autoprefixer"><code>autoprefixer</code></a> - automatically adds vendor prefixes to CSS rules</li>
-            <li><a href="https://babeljs.io/docs/en/babel-preset-env"><code>babel-preset-env</code></a> - smart preset that allows you to use the latest JavaScript without needing to micromanage which syntax transforms (<em>and optionally, browser polyfills</em>) are needed by your target environment(s).</li>
-          </ul>
-        </li>
-        <li>
-          Demo project files to be used as a reference and <strong>example demo</strong> building of:
-          <ul>
-            <li><em>JavaScript</em></li>
-            <li><em>SASS / PostCSS</em></li>
-            <li><em>HTML</em> templates</li>
-            <li><em>Images</em> (<em>CSS backgrounds and image tags</em>)</li>
-            <li><em>Videos</em></li>
-            <li><em>Fonts</em></li>
-          </ul>
-        </li>
-        <li>
-          Support for <strong>assets optimization</strong> for production environment with ability to configure:
-          <ul>
-            <li><strong>Code Minification</strong> of <em>JavaScript</em> and <em>CSS</em> processed files.</li>
-            <li><strong>Optimize Assets Loading</strong> - inline and embed <strong>images</strong> / <strong>fonts</strong> files having file size below a <em>configurable</em> threshold value.</li>
-            <li><strong>Images Optimisation</strong> - optimize <code>jpeg</code>, <code>jpg</code>, <code>png</code>, <code>gif</code>, <code>svg</code> filesize and loading type via <a href="https://github.com/imagemin/imagemin"><code>imagemin</code></a>. Plugin and Loader for webpack to optimize (<em>compress</em>) all images using <code>imagemin</code>. Do not worry about size of images, now they are always optimized/compressed.</li>
-          </ul>
-        </li>
-        <li>
-          Support for <strong>source code syntax style and formatting linters</strong> that analyze source code to flag any programming errors, bugs, stylistic errors or suspicious constructs:
-          <ul>
-            <li><strong>SASS/PostCSS syntax cheker</strong> - you can change or add additional rules in <code>.sasslintrc</code> file. Configuration options can be found on <a href="https://github.com/sasstools/sass-lint/blob/master/lib/config/sass-lint.yml"><code>sass-lint</code></a> documentation.</li>
-            <li><strong>JavaScript syntax checker</strong> - following the <code>airbnb</code> style, you can review and configure the rules in <code>.eslintrc</code> file. Configuration options can be found on <a href="https://eslint.org/docs/user-guide/configuring"><code>eslint</code></a> documentation.</li>
-          </ul>
-        </li>
-        <li>Latest <a href="https://github.com/webpack/webpack">Webpack 5</a> - <em>JavaScript</em> module bundler.</li>
-        <li>Latest <a href="https://github.com/sass/sass">SASS/PostCSS</a> compiler based on Dart <code>sass</code>.</li>
-        <li>Latest <a href="https://github.com/babel/babel">Babel 7</a> (<code>@babel/core</code>) - JavaScript compiler - <em>Use next generation JavaScript, today.</em></li>
-        <li>
-          Integration with <a href="https://travis-ci.com/">Travis CI</a>
-          <ul>
-            <li><a href="https://weareathlon.github.io/frontend-webpack-boilerplate/">Demo deployment available to GitHub pages</a></li>
-          </ul>
-        </li>
-        <li>Configured and ready to use <strong>Webpack Dev Server</strong> plugin for faster local development - <a href="https://webpack.js.org/configuration/dev-server/"><code>webpack-dev-server</code></a></li>
-        <li>Integration with <a href="https://www.npmjs.com/package/webpack-bundle-analyzer">Webpack Bundle Analyzer</a> - <em>Visualize size of webpack output files with an interactive zoomable treemap.</em></li>
-      </ul>
-      <h2 id="requirements">Requirements</h2>
-      <ul>
-        <li><code>node</code> : <code>&gt;=14</code></li>
-        <li><code>npm</code></li>
-      </ul>
-      <h1 id="setup">Setup</h1>
-      <h2 id="installation">Installation</h2>
-      <ol>
-        <li>Choose and download the latest template release from <a href="https://github.com/WeAreAthlon/frontend-webpack-boilerplate/releases">List of Releases</a>.</li>
-        <li>Extract the release archive to a new directory, rename it to your project name and browse the directory.</li>
-        <li>Install all dependencies using <code>npm</code> <em>clean install</em> command. </li>
-      </ol>
-      <pre><code class="lang-sh">$ <span class="hljs-built_in">npm</span> ci</code></pre>
-      <blockquote>
-        <p>More on the clean install npm command can be read here <a href="https://docs.npmjs.com/cli/ci.html"><code>npm ci</code></a></p>
-        <p>You can still use <code>npm install</code> in cases the <code>npm ci</code> raises system error due to specific platform incompatibilities.</p>
-      </blockquote>
-      <h2 id="define-package-metadata">Define Package Metadata</h2>
-      <ul>
-        <li>
-          Amend <code>package.json</code> file and optionally specify:
-          <ul>
-            <li><code>name</code> - Name of your project. A name can be optionally prefixed by a scope, e.g. <code>@myorg/mypackage</code>.</li>
-            <li><code>version</code> - Specify and maintain a version number indicator for your project code.</li>
-            <li><code>author</code> - Your organisation or just yourself. You can also specify <a href="https://docs.npmjs.com/files/package.json#people-fields-author-contributors"><code>contributors</code></a>.</li>
-            <li><code>description</code> - Short description of your project.</li>
-            <li><code>keywords</code> - Put keywords in it. It’s an array of strings.</li>
-            <li><code>repository</code> - Specify the place where your code lives.</li>
-            <li><code>license</code> - Announce your code license, figure out the license from <a href="https://choosealicense.com">Choose an Open Source License</a> .</li>
-            <li><code>browserslist</code> - Specify the supported browsers versions - you can refer to <a href="https://github.com/browserslist/browserslist#full-list">full list</a> of availalbe options.</li>
-          </ul>
-        </li>
-      </ul>
-      <h1 id="configuration">Configuration</h1>
-      <h2 id="environment-configuration">Environment Configuration</h2>
-      <ul>
-        <li>
-          Edit the <a href="configuration/environment.js"><code>configuration/environment.js</code></a> if you want to specify:
-          <ul>
-            <li><strong><code>server</code></strong>: configure development server, specify <code>host</code>, <code>port</code>. Refer to the full development server configuration options for <a href="https://webpack.js.org/configuration/dev-server/"><code>webpack-dev-server</code></a>.</li>
+            <li><a href="#" class="text-decoration-none anchor-blue">Page</a></li>
             <li>
-              <strong><code>limits</code></strong>: configure file size thresholds for assets optimizations.
-              <ul>
-                <li>Image/Font files size in bytes. Below this value the image file will be served as Data URL (<em>inline base64</em>).</li>
-              </ul>
+                <a href="#" class="text-decoration-none anchor-blue">Features</a>
             </li>
-            <li><strong><code>paths</code></strong>: <code>src</code> or <code>dist</code> directories names and file system location.</li>
-          </ul>
-        </li>
-      </ul>
-      <h2 id="additional-webpack-configuration">Additional <code>webpack</code> configuration</h2>
-      <p>You can additionally configure <code>webpack</code> for specific environment:</p>
-      <ul>
-        <li><code>development</code> - <a href="configuration/webpack.dev.config.js"><code>configuration/webpack.dev.config.js</code></a></li>
-        <li>
-          <code>production</code> - <a href="configuration/webpack.prod.config.js"><code>configuration/webpack.prod.config.js</code></a>
-          <ul>
-            <li>
-              Note that if you prefer to build and deploy <a href="https://webpack.js.org/configuration/devtool/#production"><code>sourcemap</code></a> files:
-              <blockquote>
-                <p>You should configure your server to disallow access to the Source Map file for normal users!</p>
-              </blockquote>
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <h1 id="development">Development</h1>
-      <h2 id="assets-source">Assets Source</h2>
-      <ul>
-        <li><strong>SASS/PostCSS</strong> files are located under <code>src/scss/</code></li>
-        <li><strong>JavaScript</strong> files with support of latest ECMAScript <em>ES6 / ECMAScript 2016(ES7)/ etc</em> files are located under <code>src/js/</code></li>
-        <li><strong>Image</strong> files are located under <code>src/images/</code></li>
-        <li><strong>Font</strong> files are located under <code>src/fonts/</code></li>
-        <li>
-          <strong>HTML</strong> files are located under <code>src/</code>
-          <ul>
-            <li>It will <strong>automatically</strong> build <strong>all HTML files</strong> placed under <code>src/</code> directory, no need to manually configure each template anymore!</li>
-          </ul>
-        </li>
-      </ul>
-      <h2 id="build-assets">Build Assets</h2>
-      <h3 id="one-time-build-assets-for-development">One time build assets for development</h3>
-      <pre><code class="lang-sh">$ npm <span class="hljs-keyword">run</span><span class="bash"> build</span>
-      </code></pre>
-      <h3 id="build-assets-and-enable-source-files-watcher">Build assets and enable source files watcher</h3>
-      <pre><code class="lang-sh">$ npm <span class="hljs-keyword">run</span><span class="bash"> watch</span>
-      </code></pre>
-      <p>This command is suitable if you develop with external web server.</p>
-      <blockquote>
-        <p><strong>Note:</strong> File watching does not work with <em>NFS</em> (<em>Windows</em>) and virtual machines under <em>VirtualBox</em>. Extend the configuration in such cases by:</p>
-      </blockquote>
-      <pre><code class="lang-js">module.exports = {
-        <span class="hljs-comment">//...</span>
-      <span class="hljs-symbol">  watchOptions:</span> {
-      <span class="hljs-symbol">    poll:</span> <span class="hljs-number">1000</span> <span class="hljs-comment">// Check for changes every second</span>
-        }
-      };
-      </code></pre>
-      <h3 id="start-a-development-server-reloading-automatically-after-each-file-change-">Start a development server - reloading automatically after each file change.</h3>
-      <pre><code class="lang-sh">$ npm <span class="hljs-keyword">run</span><span class="bash"> dev</span>
-      </code></pre>
-      <h1 id="production">Production</h1>
-      <h2 id="build-assets-1">Assets Building</h2>
-      <p>Optimize assets for production by:</p>
-      <pre><code class="lang-sh">$ npm <span class="hljs-keyword">run</span><span class="bash"> production</span>
-      </code></pre>
-      <h2 id="get-built-assets">Get Built Assets</h2>
-      <ul>
-        <li><em>CSS</em> files are located under <code>/dist/css/</code></li>
-        <li><em>JavaScript</em> files with support of <em>ES6 / ECMAScript 2016(ES7)</em> files are located under <code>/dist/js/</code></li>
-        <li>
-          <em>Images</em> are located under <code>/dist/images/</code>
-          <ul>
-            <li>Images part of the <em>design</em> (<em>usually referenced in the CSS</em>) are located under <code>/dist/images/design/</code></li>
-            <li>Images part of the <em>content</em> (<em>usually referenced via <code>&lt;img&gt;</code> tags</em>) are located under <code>/dist/images/content/</code></li>
-          </ul>
-        </li>
-        <li><em>Fonts</em> are located under <code>/dist/fonts/</code></li>
-        <li><em>HTML</em> files are located under <code>/dist/</code></li>
-      </ul>
-      <h1 id="run-code-style-linters">Run Code Style Linters</h1>
-      <h2 id="sass">SASS</h2>
-      <pre><code class="lang-sh">$ npm <span class="hljs-keyword">run</span><span class="bash"> lint:sass</span></code></pre>
-      <h2 id="javascript">JavaScript</h2>
-      <pre><code class="lang-sh">$ npm <span class="hljs-keyword">run</span><span class="bash"> lint:js</span></code></pre>
-      <h1 id="additional-tools">Additional Tools</h1>
-      <h2 id="run-assets-bundle-analyzer">Run Assets Bundle Analyzer</h2>
-      <pre><code class="lang-sh">$ npm <span class="hljs-keyword">run</span><span class="bash"> stats</span></code></pre>
-      <blockquote>
-        <p>This will open the visualisaion on the default configuraiton URL <code>localhost:8888</code>, you can change this URL or port following the <a href="https://github.com/webpack-contrib/webpack-bundle-analyzer#options-for-cli">package</a> documentation.</p>
-      </blockquote>
-      <h2 id="continuous-integration">Continuous Integration</h2>
-      <p>This boilerplate template contains integration with <a href="https://travis-ci.org/">Travis CI</a>. The build system runs all linting scripts and deploys production optimized pages to <em>GitHub</em> pages upon push to the <code>master</code> branch. However, note that this deployment flow only works for <em>Project Pages</em>, as User and Organization pages <a href="https://help.github.com/articles/user-organization-and-project-pages/">only support the master branch flow</a>.</p>
-      <p>For more information on how to set up alternative deployment processes, check out the <a href="https://docs.travis-ci.com/user/deployment">Travis CI documentation on deployment</a>. The service can deploy to dozens of cloud providers, including Heroku, AWS, and Firebase.</p>
-      <h2 id="video-files">Video File Preview</h2>
-      <video width="1024" height="576" controls>
-        <source src="videos/video.webm" type="video/webm">
-        Your browser does not support the video tag.
-      </video>
-    </main>
-    <footer>
-      <address>Documentation avaialable on the official <a href="https://github.com/WeAreAthlon/frontend-webpack-boilerplate/" target="_blank" rel="noopener">GitHub Repository</a>.</address>
-      <address>Maintained by <a href="https://www.weareathlon.com/" target="_blank" rel="noopener">WeAreAthlon</a>.</address>
-    </footer>
-  </body>
+            <li><a href="#" class="text-decoration-none anchor-blue">Blog</a></li>
+            <li><a href="#" class="text-decoration-none anchor-blue">Contact</a></li>
+        </ul>
+
+        <div class="other-options d-none d-md-flex gap-3">
+            <select name="language" id="">
+                <option value="english">EN</option>
+                <option value="french">FR</option>
+                <option value="spanish">SP</option>
+            </select>
+            <i class="fas fa-light fa-bag-shopping"></i>
+        </div>
+    </section>
+    <section class="banner mx-md-5 d-flex flex-column flex-md-row justify-content-around">
+        <div class="col-md-3 d-flex flex-column text-center text-md-start justify-content-center text-white mt-5">
+            <h1 class="banner-title"></h1>
+            <p class="banner-subtitle"></p>
+            <div class="d-flex flex-column flex-md-row align-items-center gap-5">
+                <button class="btn-property-blue">About Us</button>
+                <a href="#" class="text-decoration-none text-white">View HomeStay <i
+                        class="fa-solid fa-arrow-right-long"></i></a>
+            </div>
+        </div>
+        <form name="form"
+            class="form-main offset-md-3 col-md-3 d-flex flex-column bg-white mx-md-5 px-md-3 px-lg-5  p-1 py-5 mt-5 mb-md-5">
+            <h1 class="text-center text-md-start">Search Room</h1>
+            <p class="text-center text-md-start">
+                Get the latest on our COVID-19 response
+            </p>
+            <div class="date d-flex flex-column flex-md-row flex-md-wrap my-2  gap-2">
+                <div class="form-group d-flex flex-column w-100">
+                    <label for="Check-in">Checkin*</label>
+                    <input type="date" class="form-control check-in-btn clickable" id="DtChkIn"
+                        placeholder="&#xf133;  Check-In-Date" />
+                </div>
+                <div class="form-group d-flex flex-column w-100">
+                    <label for="Check-in">Checkout*</label>
+                    <input type="date" class="form-control check-out-btn clickable" id="DtChkOut"
+                        placeholder="&#xf133;  Check-Out-Date" />
+                </div>
+            </div>
+            <div class="form-group py-2">
+                <label for="adults" class="d-block d-flex gap-2 align-items-center py-1"><i
+                        class="fas fa-solid fa-user"></i><span>Adult</span></label>
+                <select name="guest" id="" class="adult-value w-100 border-0">
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                    <option value="">4</option>
+                    <option value="">5</option>
+                    <option value="">6</option>
+                </select>
+                <hr />
+            </div>
+            <div class="form-group py-2">
+                <label for="children" class="d-block d-flex gap-2 align-items-center py-1"><i
+                        class="fas fa-sharp fa-light fa-face-grin-wide"></i><span>Children</span></label>
+                <select name="children" id="" class="children-value w-100 border-0">
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                    <option value="">4</option>
+                    <option value="">5</option>
+                    <option value="">6</option>
+                </select>
+                <hr />
+            </div>
+            <button class="check-btn w-100 bg-deep-blue py-2 ">
+                Check availability
+            </button>
+        </form>
+    </section>
+    <section
+        class="hotel-manager text-center text-md-start mt-5 mb-5 d-flex flex-column-reverse flex-md-row align-items-center">
+        <div class="d-flex relative flex-column flex-md-row">
+            <div
+                class="manager-details offset-md-1 col-md-4 d-flex flex-column align-items-center align-items-md-start justify-content-center justify-content-md-start">
+                <p>WELCOME TO</p>
+                <h2>The Mikalto Luxury & Comfort Homestay</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, sit
+                    pariatur ad voluptates voluptatem amet saepe fugit.
+                </p>
+                <div class="d-flex flex-column text-md-start text-center">
+                    <div class="w-100">
+                        <img src="../images/content/luxury-and-comfort/signature.png" alt="signature"
+                            class="img-fluid text-black" />
+                    </div>
+                    <p>MELINDA AMANDA - HOTEL MANAGER</p>
+                </div>
+            </div>
+            <div class="offset-md-1 col-md-6 collage">
+                <div class="d-none d-md-flex">
+                    <img src="../images/content/welcome-section/hotel1.png" alt="hotel1" class="w-25 welcome-img-1" />
+
+                    <img src="../images/content/welcome-section/hotel2.png" alt="hotel2" class="w-25 welcome-img-2" />
+
+                    <img src="../images/content/welcome-section/hotel3.png" alt="hotel2" class="w-25 welcome-img-3" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="slider d-flex flex-column-reverse flex-md-row w-100">
+        <div class="col-md-6 d-flex bg-deep-blue p-md-5 p-2">
+            <div class="room-details p-md-5 p-2">
+                <p class="room-sub-heading text-warning">ELEGANCE AND COMFORT</p>
+                <h2 class="room-heading">Standard Room</h2>
+                <p>From: <span class="room-rate">$150</span>/night</p>
+                <p class="room-description">
+                    With wide and comfortable areas and daylight pouring in from the...
+                </p>
+                <div class="d-flex">
+                    <ul class="list-unstyled">
+                        <li class="me-5">Bed:</li>
+                        <li class="me-5">Capacity:</li>
+                        <li class="me-5">Room size:</li>
+                        <li class="me-5">View:</li>
+                    </ul>
+                    <ul class="list-unstyled">
+                        <li class="ms-lg-5 room-bed"></li>
+                        <li class="ms-lg-5 room-capacity"></li>
+                        <li class="ms-lg-5 room-size"></li>
+                        <li class="ms-lg-5 room-view"></li>
+                    </ul>
+                </div>
+                <button class="btn-property-blue border border-white">View Detail</button>
+            </div>
+            <div class="room-details hide p-md-5 p-2">
+                <p class="room-sub-heading text-warning">ELEGANCE AND COMFORT</p>
+                <h2 class="room-heading">Deluxe Room</h2>
+                <p>From: <span class="room-rate">$150</span>/night</p>
+                <p class="room-description">
+                    With wide and comfortable areas and daylight pouring in from the...
+                </p>
+                <div class="d-flex">
+                    <ul class="list-unstyled">
+                        <li class="me-5">Bed:</li>
+                        <li class="me-5">Capacity:</li>
+                        <li class="me-5">Room size:</li>
+                        <li class="me-5">View:</li>
+                    </ul>
+                    <ul class="list-unstyled">
+                        <li class="ms-lg-5 room-bed">Queen Size Bed</li>
+                        <li class="ms-lg-5 room-capacity">2 adults, 1 children</li>
+                        <li class="ms-lg-5 room-size">55 sqm</li>
+                        <li class="ms-lg-5 room-view">garden view</li>
+                    </ul>
+                </div>
+                <button class="btn-property-blue border border-2">View Detail</button>
+            </div>
+            <div class="room-details hide p-md-5 p-2">
+                <p class="room-sub-heading text-warning"></p>
+                <h2 class="room-heading">Super Delux Room</h2>
+                <p>From: <span class="room-rate">$150</span>/night</p>
+                <p class="room-description">
+                    With wide and comfortable areas and daylight pouring in from the...
+                </p>
+                <div class="d-flex">
+                    <ul class="list-unstyled">
+                        <li class="me-5">Bed:</li>
+                        <li class="me-5">Capacity:</li>
+                        <li class="me-5">Room size:</li>
+                        <li class="me-5">View:</li>
+                    </ul>
+                    <ul class="list-unstyled">
+                        <li class="ms-lg-5 room-bed">Queen Size Bed</li>
+                        <li class="ms-lg-5 room-capacity">2 adults, 1 children</li>
+                        <li class="ms-lg-5 room-size">55 sqm</li>
+                        <li class="ms-lg-5 room-view">garden view</li>
+                    </ul>
+                </div>
+                <button class="btn-property-blue border border-2">View Detail</button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper w-100">
+                    <div class="swiper-slide d-flex" data-number="0">
+                        <img src="../images/content/hotel-rooms/dulexRoom.jpeg" alt="dulex room" class="h-100 w-100 img-fluid" />
+                    </div>
+                    <div class="swiper-slide d-flex" data-number="1">
+                        <img src="../images/content/hotel-rooms/standardRoom.jpg" alt="standard room" class="h-100 w-100 img-fluid" />
+                    </div>
+                    <div class="swiper-slide d-flex" data-number="2">
+                        <img src="../images/content/hotel-rooms/superDulexRoom.jpg" alt="super dulex room" class="h-100 w-100 img-fluid" />
+                    </div>
+                </div>
+                <div class="swiper-button-next">
+                    <i class="fs-1 fas fa-regular fa-circle-chevron-right"></i>
+                </div>
+                <div class="swiper-button-prev">
+                    <i class="fs-1 fas fa-regular fa-circle-chevron-left"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="choose-hostel my-5 mx-5 d-flex align-items-center justify-content-center">
+        <div class="col-md-10">
+            <h1 class="text-center text-md-start mb-4">Why choose our hostel?</h1>
+            <div class="d-flex row justify-content-between">
+                <div class="col-md-4 d-flex flex-column flex-md-row align-items-md-start align-items-center">
+                    <img src="../images/content/why-choose-our-hotel/cuisine-pic.svg" alt="cuisine pic" class="img-fluid px-4" />
+                    <div class="text-center text-md-start">
+                        <h5>Unique quisine</h5>
+                        <p>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            Ratione ab odit nisi dolor,
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex flex-column flex-md-row align-items-md-start align-items-center">
+                    <img src="../images/content/why-choose-our-hotel/yoga.svg" alt="yoga icon" class="img-fluid px-4" />
+                    <div class="text-center text-md-start">
+                        <h5>Unique quisine</h5>
+                        <p>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            Ratione ab odit nisi dolor,
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex flex-column flex-md-row align-items-md-start align-items-center">
+                    <img src="../images/content/why-choose-our-hotel/location.svg" alt="location icon" class="img-fluid px-4" />
+                    <div class="text-center text-md-start">
+                        <h5>Unique quisine</h5>
+                        <p>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            Ratione ab odit nisi dolor,
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="book-your-stay text-center text-md-start">
+        <div class="d-flex flex-column flex-md-row flex-column-reverse h-50">
+            <div class="col-md-6 d-flex flex-column justify-content-center align-items-center text-white bg-deep-blue">
+                <div class="m-5 col-md-8">
+                    <p class="text-warning">OTHER ACTIVITIES</p>
+                    <h2>Give yourself a smile- Smile & Wellness</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus,
+                        fugiat. Animi accusantium officiis aspernatur eos ipsum non nisi
+                        corrupti
+                    </p>
+                    <a href="" class="text-decoration-none text-white">Explore more <i
+                            class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+            </div>
+            <div class="col-md-6 p-0">
+                <img src="../images/content/book-your-stay/swimming-pool.png" alt="swimming-pool"
+                    class="w-100 h-100 img-fluid" />
+            </div>
+        </div>
+        <div class="d-flex flex-column flex-md-row h-50">
+            <div class="col-md-6 p-0">
+                <img src="../images/content/book-your-stay/tree-house.png" class="h-100 w-100 img-fluid" alt="" />
+            </div>
+            <div class="col-md-6 d-flex flex-column justify-content-center align-items-center text-white bg-deep-blue">
+                <div class="m-5 col-md-8">
+                    <p class="text-warning">RECONNECT WITH NATURE</p>
+                    <h2>Experience a truly unforgettable holiday</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus,
+                        fugiat. Animi accusantium officiis aspernatur eos ipsum non nisi
+                        corrupti
+                    </p>
+                    <ul class="p-3">
+                        <li>Thermal water with asian baths</li>
+                        <li>Turkish bath</li>
+                        <li>Turkish sauna</li>
+                        <li>Relax and therapy massage</li>
+                    </ul>
+                    <a href="" class="text-decoration-none border btn-property-blue py-2 px-3">Book your stay</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section d-flex flex-column text-center text-md-start align-items-center my-5">
+        <p>EXPERIENCE MATTERS</p>
+        <h3 class="col-md-5 text-center mb-5">
+            Escape from the world to see the experience before you feel it. Discover
+            the luxury of Hotel Mikalto
+        </h3>
+        <div class="services d-flex flex-column flex-md-row justify-content-evenly w-100">
+            <div class="d-flex flex-column col-md-2 mb-3">
+                <img class="service-image w-100" src="" alt="img0" />
+                <p class="service-subtitle"></p>
+                <h3 class="service-title"></h3>
+                <p class="content"></p>
+                <a href="#" class="text-decoration-none">Discover more <i class="fa-solid fa-arrow-right-long"></i></a>
+            </div>
+            <div class="d-flex flex-column col-md-2 mb-3">
+                <img class="service-image w-100" src="" alt="img1" />
+                <p class="service-subtitle"></p>
+                <h3 class="service-title"></h3>
+                <p class="content"></p>
+                <a href="#" class="text-decoration-none">Discover more <i class="fa-solid fa-arrow-right-long"></i></a>
+            </div>
+            <div class="d-flex flex-column col-md-2 mb-3">
+                <img class="service-image w-100" src="" alt="img2" />
+                <p class="service-subtitle"></p>
+                <h3 class="service-title"></h3>
+                <p class="content"></p>
+                <a href="#" class="text-decoration-none">Discover more <i class="fa-solid fa-arrow-right-long"></i></a>
+            </div>
+            <div class="d-flex flex-column col-md-2 mb-3">
+                <img class="service-image w-100" src="" alt="img3" />
+                <p class="service-subtitle"></p>
+                <h3 class="service-title"></h3>
+                <p class="content"></p>
+                <a href="#" class="text-decoration-none">Discover more <i class="fa-solid fa-arrow-right-long"></i></a>
+            </div>
+        </div>
+        <button class="btn-property-white border-2 ">View all services</button>
+    </section>
+
+    <section class="say-hello d-flex py-5">
+        <div class="d-flex align-items-center justify-content-md-end w-100 my-5 px-5">
+            <div class="offset-md-7 col-md-3 bg-white me-auto px-4 py-5">
+                <h2>Say hello to a whole new you</h2>
+                <p>
+                    Proin nec leo vel metus faucibus vehicula. Donec vulputate in magna
+                    eget egestas. Aliquam ac facilisis ante, sit amet tincidunt ante.
+                    Fusce dolor sapien.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews-section bg-creme p-5  text-center text-md-start">
+        <div class="d-flex row flex-column flex-md-row gap-2 justify-content-around">
+            <div class="col-md-3 d-flex flex-column align-items-center align-items-md-start p-3">
+                <div class="d-flex justify-content-between align-items-center w-100">
+                    <div class="d-flex align-items-center w-100 justify-content-center justify-content-lg-between gap-3 gap-md-0">
+                        <img src="../images/content/reviews/review-1.png" alt="review icon1" class="img-fluid" />
+                        <div class="d-flex flex-column">
+                            <h5 class="p-0 m-0">Selena Mayer</h5>
+                            <p class="p-0 m-0">2021-01-10</p>
+                        </div>
+                        <img src="../images/content/reviews/owl.webp" alt="owl" class="bg-color-owl" />
+
+                    </div>
+                </div>
+                <div class="d-flex mb-2 justify-content-center justify-content-lg-start pt-3">
+                    <div class="rounded-circle me-1 bg-color-rating"></div>
+                    <div class="rounded-circle me-1 bg-color-rating"></div>
+                    <div class="rounded-circle me-1 bg-color-rating"></div>
+                    <div class="rounded-circle me-1 bg-color-rating"></div>
+                    <div class="rounded-circle bg-color-rating"></div>
+                </div>
+                <h3>Wonderful new year trip</h3>
+                <p>
+                    "One of the best hotels I've ever stayed in. The staff are very
+                    friendly and helpful, they were so helpful it made me feel bad. It
+                    includes use of the Spa, wonderful, it has a...
+                </p>
+            </div>
+            <div class="col-md-3 d-flex flex-column align-items-center align-items-md-start p-3">
+                <div class="d-flex justify-content-between align-items-center w-100">
+                    <div class="d-flex align-items-center w-100 justify-content-center justify-content-lg-between gap-3 gap-md-0">
+                        <img src="../images/content/reviews/review-2.png" alt="review icon2" class="img-fluid" />
+                        <div class="d-flex flex-column">
+                            <h5 class="p-0 m-0">Esther Howard</h5>
+                            <p class="p-0 m-0">2021-01-10</p>
+                        </div>
+                        <img src="../images/content/reviews/owl.webp" alt="owl" class="bg-color-owl" />
+
+
+                    </div>
+                </div>
+                <div class="d-flex mb-2 justify-content-center justify-content-lg-start pt-3">
+                    <div class="rounded-circle me-1 bg-color-rating"></div>
+                    <div class="rounded-circle me-1 bg-color-rating"></div>
+                    <div class="rounded-circle me-1 bg-color-rating"></div>
+                    <div class="rounded-circle me-1 bg-color-rating"></div>
+                    <div class="rounded-circle bg-color-rating"></div>
+                </div>
+                <h3>Recommended</h3>
+                <p>
+                    Great resort, professional staffs". It turns out that you're
+                    searching for paradise and you have it hear, nearby. Thanks for the
+                    warmth, you are fantastic.
+                </p>
+            </div>
+            <div class="col-md-3 d-flex flex-column align-items-center align-items-md-start p-3">
+                <div class="d-flex justify-content-between align-items-center w-100">
+                    <div class="d-flex align-items-center w-100 justify-content-center justify-content-lg-between gap-3 gap-md-0">
+                        <img src="../images/content/reviews/review-3.png" alt="review icon3" class="img-fluid" />
+                        <div class="d-flex flex-column ">
+                            <h5 class="p-0 m-0">Jane Cooper</h5>
+                            <p class="p-0 m-0">2021-01-10</p>
+                        </div>
+                        <img src="../images/content/reviews/owl.webp" alt="owl" class=" bg-color-owl" />
+                    </div>
+                   
+                </div>
+                <div class="d-flex mb-2 justify-content-center justify-content-lg-start pt-3">
+                    <div class="rounded-circle me-1 bg-color-rating"></div>
+                    <div class="rounded-circle me-1 bg-color-rating"></div>
+                    <div class="rounded-circle me-1 bg-color-rating"></div>
+                    <div class="rounded-circle me-1 bg-color-rating"></div>
+                    <div class="rounded-circle bg-color-rating"></div>
+                </div>
+                <h3>All good</h3>
+                <p>
+                    "I love the Resort and its environment. Mikalto is incredibly
+                    dedicated, knowledgeable, and helpful. The finished product was
+                    beautiful every penny...
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section text-center text-md-start d-flex justify-content-center my-5 py-5">
+        <div class="d-flex flex-column-reverse flex-md-row w-75 justify-content-center gap-5">
+            <div class="d-flex flex-column col-md-6">
+                <div class="d-flex justify-content-center justify-content-md-start">
+                    <img class="img-fluid w-25" src="../images/content/map-section/leaf.png" alt="leaf" />
+                </div>
+                <p>GETTING HERE</p>
+                <h2>How to get there?</h2>
+                <p>
+                    Cras vel sapien erat. Proin molestie malesuada sem, nec euismod
+                    metus luctus in. Aliquam eget nibh quis leo tempor congue. Integer
+                    accumsan sollicitudin vehicula
+                </p>
+                <div
+                    class="d-flex flex-column flex-md-row align-items-center align-items-md-start text-center text-md-start">
+                    <div class="px-4">
+                        <i class="fs-1 fas fa-regular fa-plane-up"></i>
+                    </div>
+                    <div>
+                        <h5>By plane</h5>
+                        <p>
+                            Donec ornare orci sit amet laoreet imperdiet. Sed lacus lorem,
+                            pretium id efficitur eu, laoreet quis urna.
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="d-flex flex-column flex-md-row align-items-center align-items-md-start text-center text-md-start">
+                    <div class="px-4">
+                        <i class="fs-1 fas fa-light fa-bus-simple"></i>
+                    </div>
+                    <div>
+                        <h5>By bus</h5>
+                        <p>
+                            Ut convallis eleifend arcu, eu tempor enim molestie vel.
+                            Curabitur interdum ipsum quis metus aliquam cursus. Duis vitae
+                            nulla at nisl finibus pharetra. Nunc porttitor sapien quis
+                            euismod sodales. Nullam in ipsum nibh.
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="d-flex flex-column flex-md-row align-items-center align-items-md-start text-center text-md-start">
+                    <div class="px-4">
+                        <i class="fs-1 fas fa-regular fa-car"></i>
+                    </div>
+                    <div>
+                        <h5>By van</h5>
+                        <p>
+                            Proin nec leo vel metus faucibus vehicula. Donec vulputate in
+                            magna eget egestas. Aliquam ac facilisis ante, sit amet.
+                        </p>
+                    </div>
+                </div>
+                <a href="#" class="text-decoration-none">Discover more <i
+                        class="fas fa-solid fa-arrow-right-long"></i></a>
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <iframe class="w-100 h-100"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.043901925615!2d88.42922191494593!3d22.57746128518026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275a5466e0099%3A0x563fb49fb6394261!2sItobuz%20Technologies%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1679901712851!5m2!1sen!2sin"
+                    style="border: 0" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="side-by-side bg-creme d-flex flex-column text-center text-md-start flex-md-row w-100 mt-5 pb-5">
+        <div class="d-flex col-md-6 image-collage gap-2">
+            <div>
+                <img src="../images/content/location/travelImage1.jpg" alt="travelImage1" class="img-fluid h-100 w-100" />
+            </div>
+            <div class="d-flex flex-column gap-2">
+                <div class="h-50">
+                    <img src="../images/content/location/travelImage2.jpg" alt="travelImage2" class="img-fluid h-100 w-100" />
+                </div>
+                <div class="h-50">
+                    <img src="../images/content/location/travelImage3.jpg" alt="travelImage3" class="img-fluid h-100 w-100" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 text-center d-flex flex-column align-items-center justify-content-center pt-5">
+            <div class="w-50">
+                <p>SPA & WELLNESS</p>
+                <h3>Side by Side with Nature</h3>
+                <p>
+                    Find harmony and balance from the inside out and outside in. Laborum
+                    accusantium libero commodi id officiis itaque esse adipisci,
+                    necessitatibus asperiores, illo odio.
+                </p>
+                <button class="btn-property-blue ">Join Us</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="subscribe d-flex flex-column text-center text-md-start align-items-center my-5 gap-3">
+        <p>STORIES DELOVERED STRAIGHT</p>
+        <h3>Get News & Update to your Inbox</h3>
+        <div class="border p-1 w-50 d-flex flex-column flex-md-row justify-content-between">
+            <input type="email" class="border-0 w-100 p-2" placeholder="Enter your email addresss" />
+            <button class="btn-property-blue">Subscribe</button>
+        </div>
+        <p>Will be used in accordance with our <a href="#">Privacy Policy</a></p>
+    </section>
+
+    <section class="footer text-white w-100 bg-deep-blue">
+        <img src="../images/content/footer/footerDesign.png" alt="footerDesign" class="w-100" />
+
+        <div class="d-flex flex-column flex-md-row w-100 justify-content-center text-center text-md-start">
+            <div class="gap-5 d-flex flex-column flex-md-row justify-content-around py-3 col-md-8">
+                <div class="d-flex flex-column align-items-center align-items-md-start">
+                    <h3>MIKALTO</h3>
+                    <p>HOTEL AND RESORTS</p>
+
+                    <p>Duis vitae text</p>
+
+                    <div class="d-flex gap-2">
+                        <h6>Follow us:</h6>
+                        <div class="d-flex gap-2">
+                            <i class="fas fa-brands fa-facebook-f text-white"></i>
+                            <i class="fas fa-brands fa-twitter text-white"></i>
+                            <i class="fas fa-brands fa-instagram text-white"></i>
+                            <i class="fas fa-brands fa-youtube text-white"></i>
+                            <i class="fas fa-brands fa-pinterest text-white"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-column">
+                    <h6>About</h6>
+                    <a href="#">About us</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Contact us</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Gift Cards</a>
+                </div>
+                <div class="d-flex flex-column">
+                    <h6>Services</h6>
+                    <a href="#">Spa</a>
+                    <a href="#">Experience</a>
+                    <a href="#">Weddings</a>
+                    <a href="#">Dining</a>
+                    <a href="#">Event</a>
+                </div>
+                <div class="d-flex flex-column">
+                    <h6>Quick Links</h6>
+                    <a href="#">Facilities</a>
+                    <a href="#">Accomodation</a>
+                    <a href="#">Resrevation</a>
+                    <a href="#">Why Choose Us</a>
+                    <a href="#">Our Restaurant</a>
+                </div>
+                <div class="d-flex flex-column">
+                    <h6>Contact Us</h6>
+                    <p class="m-0">Total free customer supporrt</p>
+                    <a href="#" class="mb-4">123456789</a>
+                    <p class="m-0">Need live support?</p>
+                    <a href="#"><strong>resrevation@mikalto.com</strong></a>
+                </div>
+            </div>
+        </div>
+        <hr class="w-75 mx-auto" />
+
+        <div class="d-flex gap-2 flex-column-reverse flex-md-row w-75 justify-content-between mx-auto">
+            <p class="fs-6">Copyright c 2022 Mikalto JWS.</p>
+            <div class="d-flex w-50 gap-3">
+                <p>Privacy</p>
+                <p>Terms</p>
+                <p>Sitemap</p>
+            </div>
+
+            <div class="d-flex flex-md-row align-items-center gap-2">
+                <i class="fas fa-solid fa-globe"></i>
+                <select name="language" id="" class="d-flex gap-3">
+                    <option value="english">EN</option>
+                    <option value="french">FR</option>
+                    <option value="spanish">SP</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script src="js/main.js"></script>
+</body>
+
 </html>
